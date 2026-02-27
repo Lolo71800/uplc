@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Unis pour La Clayette — Christian Lavenir, maire sortant. Élections municipales 15 mars 2026. Bilan solide, équipe unie.">
+<meta name="keywords" content="élections municipales La Clayette 2026, Christian Lavenir, Unis pour La Clayette">
+<title>Unis pour La Clayette — Christian Lavenir, maire sortant</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bleu:    #001A4E;
+  --bleu2:   #0A2D6E;
+  --or:      #B8972E;
+  --or-clair:#D4AF50;
+  --blanc:   #F7F9FC;
+  --gris:    #5A6785;
+  --bord:    rgba(0,26,78,0.1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--blanc);color:var(--bleu);overflow-x:hidden;}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 5%;
+  background:rgba(0,26,78,0.97);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(184,151,46,0.25);
+}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:#fff;letter-spacing:.02em;}
+.nav-brand b{color:var(--or-clair);}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{color:rgba(255,255,255,.65);text-decoration:none;font-size:.78rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;transition:color .2s;}
+.nav-links a:hover{color:var(--or-clair);}
+@media(max-width:700px){.nav-links{display:none;}}
+
+/* ── HERO SPLIT ── */
+#hero{display:grid;grid-template-columns:55% 45%;grid-template-rows:1fr auto;position:relative;overflow:hidden;}
+.hero-left{
+  background:var(--bleu);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:10rem 6% 5rem;
+  min-height:calc(100vh - 90px);
+  position:relative;z-index:2;
+  clip-path:polygon(0 0,100% 0,92% 100%,0 100%);
+}
+.hero-left::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent,transparent 30px,rgba(184,151,46,.025) 30px,rgba(184,151,46,.025) 31px);pointer-events:none;}
+.hero-right{background:#0C1E4A;position:relative;display:flex;align-items:flex-end;justify-content:flex-end;padding:4rem 5% 5rem;min-height:calc(100vh - 90px);}
+.hero-photo-zone{position:absolute;inset:0;background:linear-gradient(135deg,#0C2050 0%,#1A3870 100%);display:flex;align-items:center;justify-content:center;}
+.hero-photo-zone .ph{color:rgba(255,255,255,.07);font-family:'Cormorant Garamond',serif;font-size:1rem;text-align:center;line-height:2.4;letter-spacing:.04em;}
+.hero-card{position:relative;z-index:2;background:rgba(0,26,78,.85);backdrop-filter:blur(8px);border:1px solid rgba(184,151,46,.4);padding:1.8rem 2rem;max-width:280px;}
+.hero-card .badge{color:var(--or-clair);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.5rem;font-weight:600;}
+.hero-card h4{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:#fff;margin-bottom:.4rem;}
+.hero-card p{color:rgba(255,255,255,.5);font-size:.82rem;line-height:1.65;}
+.hero-card .cta-date{display:block;margin-top:.9rem;color:var(--or-clair);font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;}
+
+.hero-eyebrow{display:flex;align-items:center;gap:1rem;margin-bottom:2rem;opacity:0;animation:riseIn .6s .1s forwards;}
+.hero-eyebrow::before{content:'';width:40px;height:2px;background:var(--or);}
+.hero-eyebrow span{color:var(--or);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.2rem,5.5vw,5.8rem);font-weight:700;line-height:.96;color:#fff;margin-bottom:1rem;opacity:0;animation:riseIn .6s .25s forwards;}
+h1 em{color:var(--or-clair);font-style:italic;display:block;}
+.hero-tagline{font-family:'Cormorant Garamond',serif;font-size:clamp(1.1rem,2vw,1.5rem);color:rgba(255,255,255,.45);font-style:italic;margin-bottom:3rem;opacity:0;animation:riseIn .6s .4s forwards;}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:riseIn .6s .55s forwards;}
+.btn-or{background:var(--or);color:var(--bleu);padding:.9rem 2.2rem;font-weight:600;font-size:.85rem;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;transition:all .2s;display:inline-block;border:none;cursor:pointer;}
+.btn-or:hover{background:var(--or-clair);transform:translateY(-2px);}
+.btn-ghost{background:transparent;color:rgba(255,255,255,.7);padding:.9rem 2.2rem;font-weight:500;font-size:.85rem;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(255,255,255,.2);transition:all .2s;display:inline-block;}
+.btn-ghost:hover{border-color:var(--or);color:var(--or-clair);}
+
+/* Bande chiffres clés */
+.mandat-strip{grid-column:1/-1;display:flex;background:var(--or);}
+.ms-item{flex:1;padding:1.4rem 1.5rem;border-right:1px solid rgba(0,26,78,.15);display:flex;flex-direction:column;align-items:center;gap:.2rem;transition:background .2s;}
+.ms-item:hover{background:var(--or-clair);}
+.ms-item:last-child{border-right:none;}
+.ms-nb{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:var(--bleu);line-height:1;}
+.ms-lbl{font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.09em;color:rgba(0,26,78,.6);text-align:center;}
+
+@media(max-width:768px){
+  #hero{grid-template-columns:1fr;}
+  .hero-left{clip-path:none;padding:8rem 6% 12rem;}
+  .hero-right{display:none;}
+  .mandat-strip{flex-wrap:wrap;}
+  .ms-item{flex:1 1 50%;}
+}
+
+/* ── CHIFFRE HERO — L'ARGUMENT MASSUE ── */
+#argument {
+  background: var(--bleu);
+  padding: 0;
+  position: relative; overflow: hidden;
+}
+#argument::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,transparent,var(--or),transparent);
+}
+.arg-inner {
+  display: grid; grid-template-columns: 1fr 1fr;
+  min-height: 340px;
+}
+.arg-left {
+  background: var(--or);
+  padding: 5rem 6%;
+  display: flex; flex-direction: column; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.arg-left::after {
+  content: '€';
+  position: absolute; right: -10px; bottom: -20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14rem; font-weight: 700; color: rgba(0,26,78,.1);
+  line-height: 1; pointer-events: none;
+}
+.arg-big {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.5rem,7vw,6rem);
+  font-weight: 700; color: var(--bleu);
+  line-height: 1; margin-bottom: .3rem;
+}
+.arg-arrow {
+  font-size: 2rem; color: rgba(0,26,78,.4);
+  margin: .2rem 0;
+}
+.arg-label {
+  font-size: .78rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .12em;
+  color: rgba(0,26,78,.65); margin-top: .5rem;
+  max-width: 240px; line-height: 1.5;
+}
+.arg-right {
+  padding: 5rem 6%;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.arg-right h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem,3.5vw,2.8rem);
+  font-weight: 700; color: #fff;
+  line-height: 1.1; margin-bottom: 1.2rem;
+}
+.arg-right h2 em { color: var(--or-clair); font-style: italic; }
+.arg-right p {
+  color: rgba(255,255,255,.5); font-size: .95rem;
+  line-height: 1.8; max-width: 380px;
+}
+.arg-badge {
+  display: inline-block; margin-top: 1.5rem;
+  background: rgba(184,151,46,.15);
+  border: 1px solid rgba(184,151,46,.3);
+  color: var(--or-clair); padding: .5rem 1.2rem;
+  font-size: .72rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase;
+}
+@media(max-width:700px){
+  .arg-inner{grid-template-columns:1fr;}
+  .arg-left{padding:3rem 6%;}
+  .arg-right{padding:3rem 6%;}
+}
+
+/* ── RÉALISATIONS ── */
+#realisations{padding:8rem 5% 6rem;background:var(--blanc);}
+.section-top{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:4rem;flex-wrap:wrap;gap:1.5rem;}
+.st-left{max-width:520px;}
+.st-right{max-width:300px;color:var(--gris);font-size:.9rem;line-height:1.8;border-left:2px solid var(--or);padding-left:1.2rem;}
+.eyebrow{color:var(--or);font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.8rem;}
+.eyebrow.light{color:var(--or-clair);}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:700;line-height:1.05;}
+h2 em{font-style:italic;color:var(--gris);}
+
+.real-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem;}
+.rc{position:relative;overflow:hidden;background:var(--bleu);cursor:default;transition:transform .3s ease;}
+.rc:hover{transform:translateY(-3px);}
+.rc:hover .rc-img{transform:scale(1.05);}
+.rc:hover .rc-shade{opacity:1;}
+.rc:nth-child(1){grid-column:1/8;min-height:400px;}
+.rc:nth-child(2){grid-column:8/13;min-height:400px;}
+.rc:nth-child(3){grid-column:1/5;min-height:290px;}
+.rc:nth-child(4){grid-column:5/9;min-height:290px;}
+.rc:nth-child(5){grid-column:9/13;min-height:290px;}
+@media(max-width:900px){.rc:nth-child(n){grid-column:1/-1;min-height:260px;}}
+.rc-img{position:absolute;inset:0;transition:transform .5s ease;background:linear-gradient(135deg,#0C2050,#1A3870);display:flex;align-items:center;justify-content:center;}
+.rc-img-ph{display:flex;flex-direction:column;align-items:center;gap:.6rem;color:rgba(255,255,255,.1);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;text-align:center;}
+.rc-img-ph svg{opacity:.12;}
+.rc-shade{position:absolute;inset:0;background:rgba(0,26,78,.2);opacity:0;transition:opacity .3s;}
+.rc-body{position:relative;z-index:2;margin-top:auto;background:linear-gradient(to top,rgba(0,8,28,.97) 0%,rgba(0,8,28,.75) 55%,transparent 100%);padding:2.5rem 2rem 2rem;}
+.rc-year{display:inline-block;background:var(--or);color:var(--bleu);font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.18rem .65rem;margin-bottom:.7rem;}
+.rc-title{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:#fff;line-height:1.2;margin-bottom:.5rem;}
+.rc:nth-child(1) .rc-title{font-size:1.75rem;}
+.rc-desc{color:rgba(255,255,255,.55);font-size:.82rem;line-height:1.65;}
+.rc-tag{display:inline-flex;align-items:center;gap:.4rem;margin-top:.9rem;color:var(--or-clair);font-size:.7rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;}
+.rc-tag::before{content:'';width:18px;height:1px;background:var(--or);}
+
+/* ── MOT DU MAIRE ── */
+#maire{
+  background: #F0F4FB;
+  padding: 7rem 5%;
+}
+.maire-inner {
+  display: grid; grid-template-columns: 320px 1fr;
+  gap: 5rem; align-items: start; max-width: 1000px;
+}
+@media(max-width:768px){.maire-inner{grid-template-columns:1fr;gap:3rem;}}
+.maire-photo {
+  background: linear-gradient(160deg,#0A2D6E,#1A4090);
+  aspect-ratio: 3/4;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.maire-initials{font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:700;color:rgba(255,255,255,.1);}
+.maire-photo-badge{position:absolute;bottom:1.2rem;left:1.2rem;background:var(--or);color:var(--bleu);font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.25rem .7rem;}
+.maire-quote {
+  padding: 2.5rem 0;
+}
+.maire-quote blockquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.3rem,2.5vw,1.9rem);
+  font-weight: 300; font-style: italic;
+  color: var(--bleu); line-height: 1.6;
+  margin-bottom: 2rem;
+  position: relative; padding-left: 2rem;
+}
+.maire-quote blockquote::before {
+  content: '"';
+  position: absolute; left: 0; top: -.5rem;
+  font-size: 5rem; color: var(--or); line-height: 1;
+  font-style: normal; opacity: .4;
+}
+.maire-body {
+  color: var(--gris); font-size: .95rem; line-height: 1.85;
+  margin-bottom: 1.5rem;
+}
+.maire-sig {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem; font-weight: 600; color: var(--bleu);
+}
+.maire-sig span { display: block; font-size: .78rem; color: var(--gris); font-weight: 400; font-style: italic; }
+
+/* ── FOCUS SANTÉ ── */
+#sante {
+  background: var(--bleu);
+  padding: 7rem 5%;
+  position: relative; overflow: hidden;
+}
+#sante::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--or),transparent);}
+.sante-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; align-items: start; margin-top: 3rem;
+}
+@media(max-width:700px){.sante-grid{grid-template-columns:1fr;gap:2rem;}}
+.sante-actes { }
+.sante-actes h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem; font-weight: 600; color: var(--or-clair);
+  margin-bottom: 1.2rem;
+}
+.sante-item {
+  display: flex; gap: 1rem; margin-bottom: 1.2rem;
+  padding-bottom: 1.2rem; border-bottom: 1px solid rgba(184,151,46,.12);
+}
+.sante-item:last-child{border-bottom:none;}
+.sante-ico{flex-shrink:0;width:36px;height:36px;background:rgba(184,151,46,.15);border:1px solid rgba(184,151,46,.25);display:flex;align-items:center;justify-content:center;font-size:1rem;}
+.sante-text h4{color:#fff;font-size:.9rem;font-weight:600;margin-bottom:.25rem;}
+.sante-text p{color:rgba(255,255,255,.45);font-size:.82rem;line-height:1.6;}
+
+.sante-engagement {
+  background: rgba(184,151,46,.07);
+  border: 1px solid rgba(184,151,46,.2);
+  padding: 2.5rem;
+}
+.sante-engagement h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:#fff;margin-bottom:1rem;}
+.sante-engagement p{color:rgba(255,255,255,.5);font-size:.9rem;line-height:1.8;margin-bottom:1rem;}
+.sante-engagement p strong{color:var(--or-clair);font-weight:600;}
+.sante-honesty {
+  margin-top: 1.5rem; padding: 1rem 1.2rem;
+  background: rgba(0,0,0,.2);
+  border-left: 3px solid var(--or);
+  color: rgba(255,255,255,.45); font-size: .82rem;
+  font-style: italic; line-height: 1.7;
+}
+
+/* ── PROGRAMME ── */
+#programme{padding:8rem 5%;background:var(--blanc);}
+.prog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));border:1px solid var(--bord);margin-top:3.5rem;}
+.pc{padding:2.5rem 2.2rem;border-right:1px solid var(--bord);border-bottom:1px solid var(--bord);position:relative;overflow:hidden;transition:background .2s;}
+.pc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--bleu);transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+.pc:hover::before{transform:scaleX(1);}
+.pc:hover{background:rgba(0,26,78,.02);}
+.pc-ico{font-size:1.8rem;margin-bottom:1.2rem;display:block;}
+.pc-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--bleu);margin-bottom:1rem;}
+.pc-list{list-style:none;}
+.pc-list li{font-size:.88rem;color:var(--gris);padding:.4rem 0;line-height:1.6;border-bottom:1px solid rgba(0,26,78,.06);display:flex;align-items:baseline;gap:.6rem;}
+.pc-list li:last-child{border-bottom:none;}
+.pc-list li::before{content:'—';color:var(--or);flex-shrink:0;font-weight:300;}
+
+/* ── ÉQUIPE ── */
+#equipe{background:#F0F4FB;padding:8rem 5%;}
+.ef{display:grid;grid-template-columns:360px 1fr;max-width:900px;background:var(--bleu);}
+@media(max-width:700px){.ef{grid-template-columns:1fr;}}
+.ef-photo{background:linear-gradient(160deg,#0A2D6E,#1A4090);min-height:360px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.ef-initials{font-family:'Cormorant Garamond',serif;font-size:6rem;font-weight:700;color:rgba(255,255,255,.1);}
+.ef-badge{position:absolute;bottom:1.5rem;left:1.5rem;background:var(--or);color:var(--bleu);font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .8rem;}
+.ef-info{padding:3rem 2.5rem;display:flex;flex-direction:column;justify-content:center;}
+.ef-info h3{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:#fff;margin-bottom:.3rem;}
+.ef-role{color:var(--or-clair);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.2rem;}
+.ef-bio{color:rgba(255,255,255,.5);font-size:.9rem;line-height:1.8;margin-bottom:1.5rem;}
+.ef-note{background:rgba(255,255,255,.05);border-left:2px solid var(--or);padding:.8rem 1.2rem;color:rgba(255,255,255,.3);font-size:.78rem;font-style:italic;}
+.equipe-plus{margin-top:2rem;max-width:900px;background:#fff;border:1px dashed var(--bord);padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+.equipe-plus p{color:var(--gris);font-size:.88rem;font-style:italic;}
+
+/* ── AGENDA ── */
+#agenda{background:var(--bleu);padding:6rem 5%;position:relative;overflow:hidden;}
+#agenda::after{content:'';position:absolute;right:5%;top:50%;transform:translateY(-50%);width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(184,151,46,.07) 0%,transparent 70%);pointer-events:none;}
+.agenda-wrap{max-width:680px;position:relative;z-index:2;}
+.agenda-wrap h2{color:#fff;margin-bottom:1rem;}
+.agenda-wrap p{color:rgba(255,255,255,.45);font-size:.95rem;line-height:1.8;margin-bottom:2.5rem;}
+.event-block{display:flex;max-width:520px;}
+.ev-date{background:var(--or);padding:1.8rem 1.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:88px;}
+.ev-date .jour{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:700;color:var(--bleu);line-height:1;}
+.ev-date .mois{font-size:.62rem;font-weight:700;color:rgba(0,26,78,.6);letter-spacing:.12em;text-transform:uppercase;}
+.ev-info{flex:1;padding:1.5rem 1.8rem;background:rgba(255,255,255,.05);border:1px solid rgba(184,151,46,.2);border-left:none;}
+.ev-info h4{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:#fff;margin-bottom:.3rem;}
+.ev-info .lieu{color:rgba(255,255,255,.45);font-size:.82rem;}
+.ev-info .heure{display:inline-block;margin-top:.8rem;color:var(--or-clair);font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;}
+
+/* Election date banner */
+.election-banner {
+  background: var(--or);
+  padding: 1.2rem 5%;
+  text-align: center;
+}
+.election-banner p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem; font-weight: 700; color: var(--bleu);
+  letter-spacing: .04em;
+}
+.election-banner p span { font-style: italic; }
+
+/* ── CONTACT ── */
+#contact{padding:6rem 5%;background:var(--blanc);display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+@media(max-width:700px){#contact{grid-template-columns:1fr;gap:3rem;}}
+.cl h2{color:var(--bleu);margin-bottom:1rem;}
+.cl p{color:var(--gris);line-height:1.8;font-size:.95rem;}
+.cform{display:flex;flex-direction:column;gap:.9rem;}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;}
+.cform input,.cform textarea{width:100%;padding:.85rem 1.1rem;border:1.5px solid var(--bord);background:#fff;font-family:'Outfit',sans-serif;font-size:.9rem;color:var(--bleu);outline:none;transition:border-color .2s;}
+.cform input:focus,.cform textarea:focus{border-color:var(--bleu2);}
+.cform textarea{min-height:120px;resize:vertical;}
+
+/* ── FOOTER ── */
+footer{background:#03091A;padding:2rem 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.fb{font-family:'Cormorant Garamond',serif;font-size:1rem;color:rgba(255,255,255,.3);}
+.fb b{color:var(--or);}
+footer small{color:rgba(255,255,255,.15);font-size:.7rem;letter-spacing:.05em;}
+
+/* ── ANIMATIONS ── */
+@keyframes riseIn{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">Unis pour <b>La Clayette</b></div>
+  <ul class="nav-links">
+    <li><a href="#realisations">Bilan</a></li>
+    <li><a href="#sante">Santé</a></li>
+    <li><a href="#programme">Programme</a></li>
+    <li><a href="#equipe">Équipe</a></li>
+    <li><a href="#agenda">Réunion</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO SPLIT -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow"><span>Liste sans étiquette — Élections municipales 2026</span></div>
+    <h1>Unis<br>pour<br><em>La Clayette</em></h1>
+    <p class="hero-tagline">6 ans de résultats,<br>une équipe prête pour demain</p>
+    <div class="hero-ctas">
+      <a href="#realisations" class="btn-or">Notre bilan concret →</a>
+      <a href="#programme" class="btn-ghost">Programme 2026–2032</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo-zone">
+      <div class="ph">📸<br>Photo de<br>Christian Lavenir<br>sur le terrain</div>
+    </div>
+    <div class="hero-card">
+      <div class="badge">📅 Réunion publique</div>
+      <h4>Mercredi 11 mars 2026</h4>
+      <p>19h30 — Salle des fêtes de La Clayette<br>Venez rencontrer toute l'équipe.</p>
+      <span class="cta-date">Vote : 15 mars 2026</span>
+    </div>
+  </div>
+  <div class="mandat-strip">
+    <div class="ms-item"><span class="ms-nb">1,3 M€</span><span class="ms-lbl">Trésorerie<br>en 2026</span></div>
+    <div class="ms-item"><span class="ms-nb">0%</span><span class="ms-lbl">Hausse<br>d'impôts</span></div>
+    <div class="ms-item"><span class="ms-nb">6</span><span class="ms-lbl">Réalisations<br>majeures</span></div>
+    <div class="ms-item"><span class="ms-nb">6</span><span class="ms-lbl">Ans<br>de mandat</span></div>
+  </div>
+</section>
+
+<!-- L'ARGUMENT MASSUE — FINANCES -->
+<section id="argument">
+  <div class="arg-inner">
+    <div class="arg-left">
+      <div class="arg-big">420 k€</div>
+      <div class="arg-arrow">↓</div>
+      <div class="arg-big" style="color:var(--bleu);">1,3 M€</div>
+      <div class="arg-label">Trésorerie communale<br>2020 → 2026</div>
+    </div>
+    <div class="arg-right reveal">
+      <div class="eyebrow light">La preuve par les chiffres</div>
+      <h2>Une gestion<br><em>rigoureuse et responsable</em></h2>
+      <p>En 6 ans, nous avons plus que triplé les réserves financières de La Clayette — tout en maintenant les impôts communaux au même niveau. Ce n'est pas une promesse. C'est un fait, vérifié dans les comptes de la commune.</p>
+      <div class="arg-badge">✓ Sans augmentation des impôts communaux</div>
+    </div>
+  </div>
+</section>
+
+<!-- RÉALISATIONS PHOTO CARDS -->
+<section id="realisations">
+  <div class="section-top reveal">
+    <div class="st-left">
+      <div class="eyebrow">2020 — 2026</div>
+      <h2>Ce que nous avons<br><em>construit pour vous</em></h2>
+    </div>
+    <div class="st-right">
+      Six réalisations concrètes, visibles, vérifiables. Remplacez les zones grises par vos photos de terrain avant mise en ligne.
+    </div>
+  </div>
+  <div class="real-grid">
+
+    <div class="rc reveal">
+      <div class="rc-img">
+        <div class="rc-img-ph">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+          Photo inauguration<br>pôle paramédical
+        </div>
+      </div>
+      <div class="rc-shade"></div>
+      <div class="rc-body">
+        <span class="rc-year">2024 – 2025</span>
+        <div class="rc-title">Pôle paramédical — financé à 100% par la commune</div>
+        <p class="rc-desc">Rénovation complète d'un bâtiment communal, loyer volontairement attractif pour faciliter les installations. En activité depuis fin 2025.</p>
+        <span class="rc-tag">Santé</span>
+      </div>
+    </div>
+
+    <div class="rc reveal d1">
+      <div class="rc-img">
+        <div class="rc-img-ph">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+          Photo Place De Lattre
+        </div>
+      </div>
+      <div class="rc-shade"></div>
+      <div class="rc-body">
+        <span class="rc-year">2021 – 2023</span>
+        <div class="rc-title">Place De Lattre de Tassigny réaménagée</div>
+        <p class="rc-desc">Embellissement du cœur de ville — un espace public rénové que chaque Clayettois fréquente au quotidien.</p>
+        <span class="rc-tag">Cadre de vie</span>
+      </div>
+    </div>
+
+    <div class="rc reveal">
+      <div class="rc-img">
+        <div class="rc-img-ph">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+          Photo Guinclette<br>/ tennis
+        </div>
+      </div>
+      <div class="rc-shade"></div>
+      <div class="rc-body">
+        <span class="rc-year">2022 – 2023</span>
+        <div class="rc-title">Aire de loisirs : Guinclette & tennis rénovés</div>
+        <p class="rc-desc">Ouverture de la Guinclette et réfection complète du terrain de tennis. L'attractivité par le sport et le plein air.</p>
+        <span class="rc-tag">Loisirs</span>
+      </div>
+    </div>
+
+    <div class="rc reveal d1">
+      <div class="rc-img">
+        <div class="rc-img-ph">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+          Photo école /<br>cantine maternelle
+        </div>
+      </div>
+      <div class="rc-shade"></div>
+      <div class="rc-body">
+        <span class="rc-year">2021</span>
+        <div class="rc-title">École modernisée : cantine maternelle & aide aux devoirs</div>
+        <p class="rc-desc">Création de la cantine à l'école maternelle, aide aux devoirs gratuite, horaires périscolaires élargis. L'école comme levier d'attractivité familiale.</p>
+        <span class="rc-tag">Jeunesse</span>
+      </div>
+    </div>
+
+    <div class="rc reveal d2">
+      <div class="rc-img">
+        <div class="rc-img-ph">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+          Photo puits<br>de captage
+        </div>
+      </div>
+      <div class="rc-shade"></div>
+      <div class="rc-body">
+        <span class="rc-year">2020 – 2022</span>
+        <div class="rc-title">Eau potable : rénovation des puits de captage de la Faux</div>
+        <p class="rc-desc">Amélioration durable de la production et de la qualité de l'eau potable pour toute la commune.</p>
+        <span class="rc-tag">Environnement</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MOT DU MAIRE -->
+<section id="maire">
+  <div class="maire-inner reveal">
+    <div class="maire-photo">
+      <div class="maire-initials">CL</div>
+      <div class="maire-photo-badge">Maire sortant</div>
+    </div>
+    <div class="maire-quote">
+      <div class="eyebrow">Le mot de Christian Lavenir</div>
+      <blockquote>
+        Je crois en l'avenir de La Clayette. Je crois en sa capacité à rester une commune vivante, attractive et en bonne santé.
+      </blockquote>
+      <p class="maire-body">
+        Depuis 2020, vous m'avez confié la responsabilité de conduire notre commune. Avec l'équipe municipale, nous avons travaillé avec sérieux pour redresser nos finances, moderniser nos équipements et renforcer nos services.
+      </p>
+      <p class="maire-body">
+        Les enjeux sont clairs : l'accès aux soins, l'attractivité de notre centre-ville, la préservation de notre école, la qualité de vie de chacun. Ces sujets demandent de l'expérience, de la constance et une gestion responsable.
+      </p>
+      <p class="maire-body">
+        Le 15 mars 2026, je vous invite à poursuivre ce travail ensemble, dans l'unité et la confiance.
+      </p>
+      <div class="maire-sig">
+        Christian Lavenir
+        <span>Maire sortant, candidat aux élections municipales 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOCUS SANTÉ -->
+<section id="sante">
+  <div class="eyebrow light">Priorité n°1</div>
+  <h2 style="color:#fff;margin-top:.5rem">L'accès aux soins à La Clayette</h2>
+  <div class="sante-grid reveal">
+    <div class="sante-actes">
+      <h3>Actions déjà engagées</h3>
+      <div class="sante-item">
+        <div class="sante-ico">🏥</div>
+        <div class="sante-text">
+          <h4>Pôle paramédical en activité depuis fin 2025</h4>
+          <p>Bâtiment communal entièrement rénové, loyer volontairement bas pour attirer les professionnels de santé.</p>
+        </div>
+      </div>
+      <div class="sante-item">
+        <div class="sante-ico">🎓</div>
+        <div class="sante-text">
+          <h4>Démarches actives auprès de la faculté de médecine de Dijon</h4>
+          <p>Promotion de notre territoire auprès des futurs médecins pour encourager l'installation en zone rurale.</p>
+        </div>
+      </div>
+      <div class="sante-item">
+        <div class="sante-ico">🤝</div>
+        <div class="sante-text">
+          <h4>Partenariats avec le Département et l'ARS</h4>
+          <p>Discussions engagées avec les institutions compétentes pour accélérer l'installation d'un médecin généraliste.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sante-engagement">
+      <h3>Notre engagement pour demain</h3>
+      <p>La désertification médicale est un défi national. Nous ne promettons pas l'impossible.</p>
+      <p>Une commune ne peut contraindre un médecin à s'installer. En revanche, elle peut — et nous le faisons — <strong>créer les conditions favorables, accompagner chaque projet, travailler en partenariat avec toutes les institutions compétentes.</strong></p>
+      <p>Nous étudierons toute opportunité réaliste : médecins généralistes et spécialistes, en lien avec l'ARS, le Conseil départemental et les collectivités voisines.</p>
+      <div class="sante-honesty">
+        Cette honnêteté est une force, pas une faiblesse. Les Clayettois méritent la vérité, pas des promesses que personne ne peut tenir.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMME -->
+<section id="programme">
+  <div class="reveal">
+    <div class="eyebrow">2026 — 2032</div>
+    <h2 style="margin-bottom:.8rem">Notre programme</h2>
+    <p style="color:var(--gris);font-size:.95rem;line-height:1.8;max-width:560px">
+      Bâti sur 6 ans d'expérience du terrain. Chaque engagement s'appuie sur ce que nous savons déjà réaliser pour La Clayette.
+    </p>
+  </div>
+  <div class="prog-grid reveal">
+    <div class="pc">
+      <span class="pc-ico">🏥</span>
+      <div class="pc-title">Santé & Aînés</div>
+      <ul class="pc-list">
+        <li>Poursuivre les démarches pour un médecin généraliste</li>
+        <li>Développer le pôle paramédical existant</li>
+        <li>Lutte active contre l'isolement des aînés</li>
+        <li>Améliorer la qualité de vie des seniors</li>
+      </ul>
+    </div>
+    <div class="pc">
+      <span class="pc-ico">🏘️</span>
+      <div class="pc-title">Centre-ville & Commerces</div>
+      <ul class="pc-list">
+        <li>Modernisation du centre-ville</li>
+        <li>Soutien concret aux commerçants locaux</li>
+        <li>Programme culturel et animations pour tous</li>
+        <li>Réhabilitation des logements vacants (15%)</li>
+      </ul>
+    </div>
+    <div class="pc">
+      <span class="pc-ico">🎓</span>
+      <div class="pc-title">Jeunesse & École</div>
+      <ul class="pc-list">
+        <li>Défense de notre école — maintien des classes</li>
+        <li>Conseil municipal des jeunes</li>
+        <li>Activités périscolaires diversifiées</li>
+        <li>Soutien à l'apprentissage et à l'alternance</li>
+      </ul>
+    </div>
+    <div class="pc">
+      <span class="pc-ico">🌿</span>
+      <div class="pc-title">Cadre de vie</div>
+      <ul class="pc-list">
+        <li>Commission des fêtes ouverte aux citoyens</li>
+        <li>Jardin municipal partagé</li>
+        <li>Vidéosurveillance et sécurité renforcée</li>
+        <li>Gestion environnementale responsable</li>
+      </ul>
+    </div>
+    <div class="pc">
+      <span class="pc-ico">💼</span>
+      <div class="pc-title">Finances & Gouvernance</div>
+      <ul class="pc-list">
+        <li>Maintien du cap : investissements sans hausse d'impôts</li>
+        <li>Habitants associés aux travaux des commissions</li>
+        <li>Réunions publiques participatives régulières</li>
+        <li>Communication active : réseaux, Panneau Pocket®</li>
+      </ul>
+    </div>
+    <div class="pc">
+      <span class="pc-ico">🏰</span>
+      <div class="pc-title">Tourisme & Attractivité</div>
+      <ul class="pc-list">
+        <li>Valoriser nos atouts touristiques</li>
+        <li>Accueil de nouveaux habitants et entreprises</li>
+        <li>Partenariat actif avec la Communauté de Communes</li>
+        <li>Liaison zones d'activités ↔ commune</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ÉQUIPE -->
+<section id="equipe">
+  <div class="reveal" style="margin-bottom:2.5rem">
+    <div class="eyebrow">L'expérience au service de tous</div>
+    <h2>Notre équipe</h2>
+    <p style="color:var(--gris);font-size:.95rem;line-height:1.8;max-width:560px;margin-top:.8rem">
+      19 femmes et hommes aux compétences complémentaires, unis par un engagement sincère au service de tous les Clayettois. Une équipe immédiatement opérationnelle.
+    </p>
+  </div>
+  <div class="ef reveal">
+    <div class="ef-photo">
+      <div class="ef-initials">CL</div>
+      <div class="ef-badge">Tête de liste</div>
+    </div>
+    <div class="ef-info">
+      <h3>Christian Lavenir</h3>
+      <div class="ef-role">Maire sortant — Tête de liste</div>
+      <p class="ef-bio">
+        [Profession, ancrage à La Clayette, parcours municipal]. À compléter avec la biographie de Christian Lavenir — son métier, son histoire avec la commune, et ce qui l'anime dans cet engagement.
+      </p>
+      <div class="ef-note">📸 Remplacer par la photo officielle de Christian Lavenir.</div>
+    </div>
+  </div>
+  <div class="equipe-plus reveal">
+    <p>📸 Portraits et biographies des 19 colistiers à intégrer — fournir photos + courtes présentations.</p>
+    <a href="#contact" class="btn-or">Nous contacter</a>
+  </div>
+</section>
+
+<!-- AGENDA -->
+<section id="agenda">
+  <div class="agenda-wrap">
+    <div class="eyebrow light" style="margin-bottom:.8rem">Venez nous rencontrer</div>
+    <h2 class="reveal" style="color:#fff">Réunion publique</h2>
+    <p class="reveal">Échangeons directement sur notre bilan et notre programme pour La Clayette. Toutes les questions sont les bienvenues.</p>
+    <div class="event-block reveal">
+      <div class="ev-date"><span class="jour">11</span><span class="mois">Mars 2026</span></div>
+      <div class="ev-info">
+        <h4>Réunion publique — La Clayette</h4>
+        <div class="lieu">📍 Salle des fêtes / Salle Magnolia <span style="color:rgba(255,255,255,.3);font-size:.72rem">(à confirmer)</span></div>
+        <span class="heure">🕖 19h30</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ELECTION BANNER -->
+<div class="election-banner">
+  <p>Le <span>dimanche 15 mars 2026</span>, votez pour <b>Unis pour La Clayette</b> — Christian Lavenir et son équipe</p>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="cl reveal">
+    <div class="eyebrow">On se parle</div>
+    <h2>Votre message compte</h2>
+    <p>Une question, une idée, un soutien ?<br>Chaque message sera lu par l'équipe de Christian Lavenir.<br><br>📧 À renseigner : adresse email de contact</p>
+  </div>
+  <form class="cform reveal" onsubmit="return false;">
+    <div class="frow">
+      <input type="text" placeholder="Votre nom" required>
+      <input type="email" placeholder="Votre email" required>
+    </div>
+    <input type="text" placeholder="Objet">
+    <textarea placeholder="Votre message…"></textarea>
+    <button type="submit" class="btn-or" style="align-self:flex-end;border:none;cursor:pointer">Envoyer →</button>
+  </form>
+</section>
+
+<footer>
+  <div class="fb">Unis pour <b>La Clayette</b> — Christian Lavenir, maire sortant</div>
+  <small>© 2026 — Site de campagne électorale — Élections municipales La Clayette 71800 — Liste sans étiquette</small>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+</script>
+</body>
+</html>
